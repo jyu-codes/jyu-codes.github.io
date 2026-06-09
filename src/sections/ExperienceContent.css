@@ -34,6 +34,12 @@
   );
 }
 
+.icon-item span,
+.period span {
+  text-align: left;
+  justify-self: flex-start;
+}
+
 /* -----------------------------
    Timeline Item
 ------------------------------ */
@@ -88,9 +94,14 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  text-align: justify;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-content,
+.about-text,
+.icon-item,
+.experience-list li {
+  text-align: left;
 }
 
 /* Hover effect */
@@ -231,10 +242,6 @@
    Tablets / Small devices (<= 768px)
 ------------------------------ */
 @media (max-width: 768px) {
-  .experience-section {
-    padding: 3rem 1rem;
-  }
-
   .timeline::before {
     left: 1rem; /* adjust line for smaller screen */
   }
@@ -259,6 +266,10 @@
    Mobile (<= 480px)
 ------------------------------ */
 @media (max-width: 480px) {
+  .experience-section {
+    padding: 1rem 1rem;
+  }
+
   .timeline {
     padding-left: 1.8rem;
   }
@@ -270,7 +281,7 @@
   .timeline-dot {
     width: 14px;
     height: 14px;
-    left: 0.3rem;
+    left: -0.85rem;
   }
 
   .timeline-content {

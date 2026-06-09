@@ -146,15 +146,18 @@ export const projects = [
     title: "Portfolio Template",
     description: "Portfolio template project from Coursera’s Meta Advanced React course, focused on implementing reusable React components and integrating Chakra UI for UI styling, along with Formik and Yup for form handling and validation.",
     image: PortfolioImg,
+    liveUrl: ""
   },
   {
     title: "Blog App",
     description: "A single-page blogging platform built with React. Features include creating, editing, and deleting posts, dynamic routing, and responsive design",
     image: BlogImg,
+    liveUrl: "https://github.com/jyu-codes/react_blog_app"
   },
   {
     title: "Capstone Project",
     description: "A full-stack web application.",
-    image: ""
+    image: "",
+    liveUrl: ""
   },
 ];

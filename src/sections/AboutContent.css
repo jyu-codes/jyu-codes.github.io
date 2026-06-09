@@ -220,17 +220,58 @@ article.about-text strong {
 /* -----------------------------
    Extra small <= 480px
 ------------------------------ */
+/* Extra small screens <= 480px */
 @media (max-width: 480px) {
+  .about-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-section {
+    padding: 1rem 1rem;
+  }
+
   .about-icons {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.6rem;
+    max-width: 100%;
+  }
+
+  .about-icons li.icon-item {
+    justify-content: flex-start;
+    padding: 0.5rem;
+    min-height: auto;
+    word-break: break-word;
+    max-width: 100%;
   }
 
   .icon-item span {
     font-size: 0.85rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .download-btn span {
     font-size: 0.85rem;
+  }
+
+  .avatar-image {
+    width: clamp(150px, 40%, 250px);
+    height: auto;
+  }
+
+  article.about-text h1 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  article.about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }

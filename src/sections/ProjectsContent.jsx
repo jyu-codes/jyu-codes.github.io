@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { projects } from "../data/portfolioData";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 import "./ProjectsContent.css";
 
 const ProjectsContent = () => {
@@ -19,8 +20,21 @@ const ProjectsContent = () => {
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
                 </div>
+                
                 <h4>{project.title}</h4>
                 <p>{project.description}</p>
+                
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-btn"
+                    aria-label="View Live Project"
+                  >
+                    <FiExternalLink />
+                  </a>
+                )}
               </div>
             </div>
           ))}
