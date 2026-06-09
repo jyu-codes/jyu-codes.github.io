@@ -1,0 +1,236 @@
+/* -----------------------------
+   About Section / Avatar
+------------------------------ */
+#about {
+  background: radial-gradient(
+      circle at top,
+      var(--alternate-glow),
+      transparent 60%
+    ),
+    var(--alternate-bg);
+}
+
+.about-section {
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Layout container */
+.about-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+/* -----------------------------
+   Avatar
+------------------------------ */
+.avatar-image {
+  width: clamp(220px, 35%, 500px);
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.avatar-image:hover {
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .avatar-image {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* -----------------------------
+   Text Content
+------------------------------ */
+article.about-text {
+  flex: 1 1 300px;
+}
+
+article.about-text h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+article.about-text h2 {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+article.about-text p {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+}
+
+article.about-text strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* -----------------------------
+   Icons Section
+------------------------------ */
+.about-icons {
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.about-icons li.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  min-height: 50px;
+  justify-content: flex-start;
+}
+
+.about-icons li.icon-item.graduation {
+  min-height: 70px;
+}
+
+/* Icon styling */
+.about-icon {
+  font-size: 1.25rem;
+  color: var(--gradient-end);
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.icon-item span {
+  line-height: 1.2;
+  text-align: left;
+  overflow-wrap: break-word; /* wrap long emails */
+}
+
+/* -----------------------------
+   Download Button
+------------------------------ */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  box-shadow: 0 6px 12px rgba(99, 102, 241, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.download-btn:focus {
+  outline: 2px solid var(--gradient-end);
+  outline-offset: 3px;
+}
+
+.download-btn .info-icon {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 1024px) {
+  .about-inner {
+    gap: 2rem;
+  }
+
+  .avatar-image {
+    width: clamp(180px, 30%, 400px);
+  }
+
+  article.about-text h1 {
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+  }
+
+  article.about-text p {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+  }
+}
+
+/* -----------------------------
+   Small screens <= 768px
+   Keep icons and span same layout
+------------------------------ */
+@media (max-width: 768px) and (min-width: 481px) {
+  .about-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-icons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  .icon-item {
+    justify-content: flex-start;
+  }
+
+  .icon-item span {
+    word-break: break-word;
+  }
+}
+
+/* -----------------------------
+   Extra small <= 480px
+------------------------------ */
+@media (max-width: 480px) {
+  .about-icons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .icon-item span {
+    font-size: 0.85rem;
+  }
+
+  .download-btn span {
+    font-size: 0.85rem;
+  }
+}

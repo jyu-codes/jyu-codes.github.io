@@ -1,0 +1,119 @@
+/* -----------------------------
+   Contact Form
+------------------------------ */
+#contact {
+  background: radial-gradient(circle at top, var(--alternate-glow), transparent 60%), var(--alternate-bg);
+}
+
+.fs-form {
+  display: grid;
+  gap: 1.5rem;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.fs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fs-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.fs-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.fs-input,
+.fs-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--btn-outline-border);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+.fs-input:focus,
+.fs-textarea:focus {
+  border-color: var(--gradient-end);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.fs-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.fs-button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fs-button {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fs-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.fs-button:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.4);
+  outline-offset: 2px;
+}
+
+/* -----------------------------
+   Responsive (safe adjustments only)
+------------------------------ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .fs-form {
+    width: 100%;       /* allow fluid width */
+    max-width: 500px;  /* keeps desktop feel centered */
+    padding: 0 1rem;
+  }
+
+  .fs-button-group {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .fs-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* keep textarea height intact — no shrinking */
+  .fs-textarea {
+    min-height: 140px;
+  }
+
+  .fs-button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+}

@@ -1,0 +1,323 @@
+/* -----------------------------
+   Reset & Base
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 16px; /* base font size for scaling */
+  transition: background-color 0.3s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-mid) 50%,
+    var(--bg-gradient-end) 100%
+  );
+  opacity: 0.7;
+  transition: background 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1rem;
+}
+
+p, .btn {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* -----------------------------
+   Theme Variables
+------------------------------ */
+:root {
+  /* Backgrounds */
+  --bg: #ffffff;
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-mid: #f1f5f9;
+  --bg-gradient-end: #ffffff;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --subtitle: #475569;
+
+  /* Gradients */
+  --gradient-start: #06b6d4;
+  --gradient-end: #6366f1;
+
+  /* Buttons */
+  --btn-outline-bg: #ffffff;
+  --btn-outline-text: #334155;
+  --btn-outline-border: #cbd5e1;
+  --toggle-color: #000000;
+
+  /* Alternate Section */
+  --alternate-bg: #e5e7e9;
+  --alternate-glow: rgba(99, 102, 241, 0.03);
+}
+
+[data-theme="dark"] {
+  --bg: #1a1f2e;
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-mid: #1e293b;
+  --bg-gradient-end: #0f172a;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --subtitle: #60a5fa;
+
+  --gradient-start: #06b6d4;
+  --gradient-end: #60a5fa;
+
+  --btn-outline-bg: #1e293b;
+  --btn-outline-text: #f1f5f9;
+  --btn-outline-border: #334155;
+  --toggle-color: #60a5fa;
+
+  --alternate-bg: #0f172a;
+  --alternate-glow: rgba(96, 165, 250, 0.05);
+
+  --hero-bg: #0b1220;
+}
+
+/* -----------------------------
+   Navbar
+------------------------------ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--btn-outline-border);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  color: var(--text-primary);
+}
+
+.navbar li:hover,
+.navbar .active {
+  color: var(--gradient-end);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--toggle-color);
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  outline: 2px solid rgba(99,102,241,0.2);
+  outline-offset: 2px;
+}
+
+/* -----------------------------
+   Sections
+------------------------------ */
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  width: 100%;
+
+  scroll-margin-top: 40px;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.section h2:hover::after {
+  width: 100%;
+}
+
+.section p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Buttons */
+.btn-outline {
+  border: 1px solid var(--btn-outline-border);
+  background: var(--btn-outline-bg);
+  color: var(--btn-outline-text);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--bg-gradient-start);
+  border-color: var(--gradient-end);
+  color: var(--gradient-end);
+}
+
+/* -----------------------------
+   Social Links
+------------------------------ */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* -----------------------------
+   Global Responsive (mobile-first)
+------------------------------ */
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .section h2 {
+    font-size: 2.2rem;
+  }
+
+  .section h2::after {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}

@@ -1,0 +1,293 @@
+/* -----------------------------
+   Experience Section
+------------------------------ */
+.experience-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* -----------------------------
+   Timeline Wrapper
+------------------------------ */
+.timeline {
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+
+  left: 1.2rem;
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    180deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+}
+
+/* -----------------------------
+   Timeline Item
+------------------------------ */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+/* -----------------------------
+   Dot
+------------------------------ */
+.timeline-dot {
+  position: absolute;
+
+  left: 0.5rem;
+  transform: translateX(-50%);
+  top: 0rem;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+
+  border: 3px solid var(--bg); /* FIX: adapts to theme */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  z-index: 2;
+}
+
+/* -----------------------------
+   Card Content
+------------------------------ */
+.timeline-content {
+  margin-left: 2.5rem;
+
+  background: var(--bg);
+  color: var(--text-primary);
+
+  padding: 1.5rem;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  border: 1px solid rgba(148, 163, 184, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  text-align: justify;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* -----------------------------
+   Header
+------------------------------ */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Company logo */
+.company-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 10px;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Title */
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+/* Company */
+.company {
+  display: block;
+  font-weight: 500;
+
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -----------------------------
+   Period (FIXED COLOR SYSTEM)
+------------------------------ */
+.period {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.period-icon {
+  font-size: 0.9rem;
+  color: var(--gradient-end);
+}
+
+/* -----------------------------
+   Paragraph
+------------------------------ */
+.timeline-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   Experience List
+------------------------------ */
+.experience-list {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.experience-list li {
+  position: relative;
+  padding-left: 1rem;
+
+  color: var(--text-secondary);
+  line-height: 1.6;
+
+  text-align: justify;
+}
+
+/* bullet */
+.experience-list li::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 0.6em;
+
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+
+  background: var(--gradient-end); /* FIXED (was wrong var) */
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.35);
+}
+
+/* hover */
+.experience-list li:hover {
+  transform: translateX(3px);
+  transition: 0.2s ease;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (IMPROVED)
+========================================================= */
+
+/* -----------------------------
+   Tablets (<= 1024px)
+------------------------------ */
+@media (max-width: 1024px) {
+  .timeline-content {
+    padding: 1.3rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* -----------------------------
+   Tablets / Small devices (<= 768px)
+------------------------------ */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 3rem 1rem;
+  }
+
+  .timeline::before {
+    left: 1rem; /* adjust line for smaller screen */
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    left: 0.3rem;
+  }
+
+  .timeline-content {
+    padding: 1.2rem;
+  }
+
+  .company-logo {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* -----------------------------
+   Mobile (<= 480px)
+------------------------------ */
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 1.8rem;
+  }
+
+  .timeline::before {
+    left: 0.8rem;
+  }
+
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    left: 0.3rem;
+  }
+
+  .timeline-content {
+    margin-left: 0.8rem;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .period {
+    font-size: 0.8rem;
+  }
+
+  .experience-list {
+    gap: 0.5rem;
+  }
+}
