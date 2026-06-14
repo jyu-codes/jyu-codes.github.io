@@ -21,20 +21,23 @@ const ProjectsContent = () => {
                   <img src={project.image} alt={project.title} />
                 </div>
                 
-                <h4>{project.title}</h4>
+                <div className="project-title-row">
+                  <h4>{project.title}</h4>
+
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link-btn"
+                      aria-label="View Live Project"
+                    >
+                      <FiExternalLink />
+                    </a>
+                  )}
+                </div>
                 <p>{project.description}</p>
                 
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link-btn"
-                    aria-label="View Live Project"
-                  >
-                    <FiExternalLink />
-                  </a>
-                )}
               </div>
             </div>
           ))}

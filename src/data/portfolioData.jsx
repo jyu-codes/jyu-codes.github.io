@@ -1,5 +1,4 @@
-import BlogImg from "../assets/blog.jpeg";
-import PortfolioImg from "../assets/portfolio1.jpeg"
+import LittleLemonImg from "../assets/little-lemon.jpg";
 import AboutContent from "../sections/AboutContent";
 import ExperienceContent from "../sections/ExperienceContent";
 import SkillsContent from "../sections/SkillsContent";
@@ -143,21 +142,9 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Portfolio Template",
-    description: "Portfolio template project from Coursera’s Meta Advanced React course, focused on implementing reusable React components and integrating Chakra UI for UI styling, along with Formik and Yup for form handling and validation.",
-    image: PortfolioImg,
-    liveUrl: ""
-  },
-  {
-    title: "Blog App",
-    description: "A single-page blogging platform built with React. Features include creating, editing, and deleting posts, dynamic routing, and responsive design",
-    image: BlogImg,
-    liveUrl: "https://github.com/jyu-codes/react_blog_app"
-  },
-  {
-    title: "Capstone Project",
-    description: "A full-stack web application.",
-    image: "",
-    liveUrl: ""
-  },
+    title: "Book a Table at Little Lemon",
+    description: "A responsive restaurant reservation web application built with React, allowing users to book tables, select available time slots, and manage reservations through a clean and user-friendly interface. Includes form validation, state management, and dynamic booking updates.",
+    image: LittleLemonImg,
+    liveUrl: "https://jyu-codes.github.io/little-lemon-restaurant"
+  }
 ];
