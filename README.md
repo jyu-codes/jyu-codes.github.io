@@ -1,16 +1,61 @@
-# React + Vite
+# 👋 Hi, I'm Jade Yu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website!  
+This site showcases my projects, skills, and journey as a developer.
 
-Currently, two official plugins are available:
+🌐 Live Site: https://jyu-codes.github.io/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I’m a passionate developer who enjoys building clean, responsive, and user-friendly web applications.  
+I focus on writing maintainable code and continuously improving my skills in modern web technologies.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+Here are some of the technologies I work with:
+
+- ⚛️ React.js
+- 💻 JavaScript (ES6+)
+- 🌐 HTML5 & CSS3
+- 🎨 Responsive UI Design
+- 🔧 Git & GitHub
+- ⚡ GitHub Pages (deployment)
+
+---
+
+## ✨ Features of This Portfolio
+
+- Fully responsive design (mobile-friendly 📱)
+- Smooth UI interactions
+- Clean and modern layout
+- Fast deployment via GitHub Pages
+- Organized project showcase
+
+---
+
+## 📌 Purpose of This Site
+
+This portfolio serves as:
+
+- A showcase of my development skills
+- A collection of my personal and professional projects
+- A way for recruiters and collaborators to reach me
+
+---
+
+## 📫 Contact
+
+Feel free to connect with me:
+
+- GitHub: https://github.com/jyu-codes
+- Portfolio: https://jyu-codes.github.io/
+
+---
+
+## 📄 License
+
+This project is open for learning and inspiration. Feel free to fork and customize it for your own portfolio.
